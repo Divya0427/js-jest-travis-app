@@ -1,0 +1,19 @@
+{
+  "name": "js-jest-travis-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Divya0427/js-jest-travis-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Divya0427/js-jest-travis-app/issues"
+  },
+  "homepage": "https://github.com/Divya0427/js-jest-travis-app#readme"
+}
