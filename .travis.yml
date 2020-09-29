@@ -6,7 +6,6 @@ cache:
   - node_modules
 install:
 - npm install
-before_script: chmod 0777 ./node_modules/.bin/jest
 script:
 - 'if [ ${TRAVIS_BRANCH} = "develop" ]; then
     if grep -q Prod test.txt; then
