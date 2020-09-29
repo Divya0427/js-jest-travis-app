@@ -9,6 +9,7 @@ cache:
   - node_modules
 install:
 - npm install
+provider: script
 script:
   before_uat_scripts.sh
 deploy:
