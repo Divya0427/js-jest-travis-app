@@ -7,8 +7,7 @@ cache:
 install:
 - npm install
 before_script: chmod 0777 ./node_modules/.bin/jest
-provider: script
-script: someScript.sh
+script:
 - 'if [ ${TRAVIS_BRANCH} = "develop" ]; then
     if grep -q Prod test.txt; then
       sed -i 's/Prod/UAT/RELEASEVERSION' test.txt || travis_terminate 1
