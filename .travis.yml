@@ -3,16 +3,18 @@ node_js:
   - 10
 env:
   global:
-    - RELEASEVERSION=1.2
+    - RELEASE_VERSION=1.2
 cache:
   directories:
   - node_modules
 install:
 - npm install
 script:
+- echo TRAVIS_PULL_REQUEST_BRANCH
+- echo RELEASE_VERSION
 - set |grep TRAVIS
 - if [[ ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch" ]]; then
-    sed -i 's/Prod/UAT/${RELEASEVERSION}' test.txt || travis_terminate 1
+    sed -i 's/Prod/UAT/${RELEASE_VERSION}' test.txt || travis_terminate 1
 - npm run test --coverage
 - npm run build
 deploy:
