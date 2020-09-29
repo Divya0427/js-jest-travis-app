@@ -3,6 +3,7 @@ echo $RELEASE_VERSION
 echo 'test string'
 if [ ${TRAVIS_PULL_REQUEST_BRANCH} = "test-branch" ]; then
     echo "IFBLOCK"
+fi
 if [ grep -q Prod test.txt ]; then
     echo "2nd IF"
 fi
