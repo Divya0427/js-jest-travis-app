@@ -10,8 +10,8 @@ cache:
 install:
 - npm install
 script:
-- echo TRAVIS_PULL_REQUEST_BRANCH
-- echo RELEASE_VERSION
+- echo $TRAVIS_PULL_REQUEST_BRANCH
+- echo $RELEASE_VERSION
 - set |grep TRAVIS
 - if [[ ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch" ]]; then
     sed -i 's/Prod/UAT/${RELEASE_VERSION}' test.txt || travis_terminate 1
