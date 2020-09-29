@@ -4,7 +4,8 @@ echo $PROD_URL
 echo $UAT_URL
 echo 'test string'
 if [ ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch" ]; then
-    sed -i 's/UAT/${PROD_URL}' test.txt
+    sed -i 's@UAT@${PROD_URL}' test.txt
+    sed -i 's|UAT|${PROD_URL}' test.txt
     sed "s/foo/$PROD_URL/g" test.txt
 fi
 if [ ${TRAVIS_BRANCH} == "develop" ]; then
