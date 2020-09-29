@@ -1,44 +1,10 @@
 language: node_js
 node_js:
 - '10'
-env:
-  global:
-    - RELEASEVERSION=1.2
 cache:
   directories:
   - node_modules
 install:
 - npm install
-before_script: chmod 0777 ./node_modules/.bin/jest
-provider: script
-script: someScript.sh
-- 'if [ ${TRAVIS_BRANCH} = "develop" ]; then
-    if grep -q Prod test.txt; then
-      sed -i 's/Prod/UAT/RELEASEVERSION' test.txt || travis_terminate 1
-  else if [ ${TRAVIS_BRANCH} = "master" ]; then
-    if grep -q UAT test.txt; then
-      sed -i 's/UAT/Prod/RELEASEVERSION' test.txt || travis_terminate 1
-  fi'
-- sed -i 's/https://localhost:3000/https://localhost:3000/uat/g' manifest.xml
-- npm run test --coverage
-- npm run build
-before_deploy: rm -rf node_modules manifest.xml manifest_epi.xml
-deploy:
-  provider: s3
-  access_key_id: $AWS_ACCESS_KEY_ID
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
-  bucket: $S3_BUCKET_UAT
-  skip_cleanup: true
-  upload-dir: 1.2
-  on:
-    branch: develop
-deploy:
-  provider: s3
-  access_key_id: $AWS_ACCESS_KEY_ID
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
-  bucket: $S3_BUCKET
-  skip_cleanup: true
-  on:
-    branch: master
 
 
