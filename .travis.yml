@@ -11,6 +11,8 @@ install:
 - npm install
 script:
 - set |grep TRAVIS
+- if [[ ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch" ]]; then
+    sed -i 's/Prod/UAT/RELEASEVERSION' test.txt || travis_terminate 1
 - npm run test --coverage
 - npm run build
 deploy:
