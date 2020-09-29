@@ -7,7 +7,7 @@ cache:
 install:
 - npm install
 script:
-- 'if [ ${TRAVIS_BRANCH} = "develop" ]; then
+- 'if [ ${TRAVIS_BRANCH} = "test-branch" ]; then
     if grep -q Prod test.txt; then
       sed -i 's/Prod/UAT/RELEASEVERSION' test.txt || travis_terminate 1
   else if [ ${TRAVIS_BRANCH} = "master" ]; then
