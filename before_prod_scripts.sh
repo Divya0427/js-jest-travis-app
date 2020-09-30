@@ -2,7 +2,7 @@ echo $TRAVIS_PULL_REQUEST_BRANCH
 echo $RELEASE_VERSION
 echo $PROD_URL
 echo $UAT_URL
-echo 'BEFORE UAT SCRIPTS'
+echo 'test string'
 if [ ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch" ]; then
     cat test.txt
     echo $PROD_URL

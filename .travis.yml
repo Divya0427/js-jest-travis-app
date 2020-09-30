@@ -13,7 +13,12 @@ install:
 - npm install
 provider: script
 script:
-  bash before_uat_scripts.sh
+  - 'if ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch"; then
+    bash before_uat_scripts.sh  
+  fi'
+  - 'if ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch"; then
+    bash before_prod_scripts.sh  
+  fi'
 deploy:
   provider: s3
   access_key_id: $AWS_ACCESS_KEY_ID
