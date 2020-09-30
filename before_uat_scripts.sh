@@ -5,7 +5,7 @@ echo $UAT_URL
 echo 'test string'
 if [ ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch" ]; then
     cat test.txt
-    perl -pi -e 's/UAT/${PROD_URL}/g' test.txt
+    perl -pi -e 's/UAT/$PROD_URL/g' test.txt
     cat test.txt    
 fi
 if [ ${TRAVIS_BRANCH} == "develop" ]; then
