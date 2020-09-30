@@ -6,9 +6,7 @@ echo 'BEFORE UAT SCRIPTS'
 if [ ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch" ]; then
     cat test.txt
     echo $PROD_URL
-    echo ${PROD_URL}
-    perl -pi -e 's/UAT/Prod/g' test.txt
-    cat test.txt
+    echo ${PROD_URL}    
     perl -pi -e 's/UAT/$PROD_URL/g' test.txt
     cat test.txt
 fi
