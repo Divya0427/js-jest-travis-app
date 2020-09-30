@@ -6,7 +6,7 @@ echo 'test string'
 if [ ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch" ]; then
     sed -i 's@UAT@${PROD_URL}' test.txt
     sed -i 's|UAT|${PROD_URL}' test.txt
-    sed "s/foo/$PROD_URL/g" test.txt
+    sed "s/foo/${PROD_URL}/g" test.txt
 fi
 if [ ${TRAVIS_BRANCH} == "develop" ]; then
     sed -i 's/Prod/UAT/${RELEASE_VERSION}' test.txt
@@ -18,6 +18,9 @@ if [ ${TRAVIS_BRANCH} == "master" ]; then
 else
     echo 'NOT MASTER'
 fi
+sed -i 's@UAT@${PROD_URL}' test.txt
+sed -i 's|UAT|${PROD_URL}' test.txt
+sed "s/foo/${PROD_URL}/g" test.txt
 set |grep TRAVIS
 npm run test --coverage
 npm run build
