@@ -4,8 +4,8 @@ node_js:
 env:
   global:
     - RELEASE_VERSION=1.2
-    - PROD_URL=Prod/${RELEASE_VERSION}
-    - UAT_URL=UAT/${RELEASE_VERSION}
+    - PROD_URL=https://dfslh8qg8d862.cloudfront.net/prod/${RELEASE_VERSION}
+    - UAT_URL=https://dfslh8qg8d862.cloudfront.net/uat/${RELEASE_VERSION}
 cache:
   directories:
   - node_modules
