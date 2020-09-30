@@ -1,25 +1,13 @@
+===============================================
+UAT
+Prod
 https://localhost:7777 => https://google.com
-
-
 https://google.com
 https://google.com
-UAT
-UAT
-UAT
-UAT
-Prod
-Prod
-Prod
-Prod
 https://localhost:3000/UAT/1.2/......
 
 master
 https://localhost:3000/Prod/1.2/.....
-
-sed -i.bak 's|https://google.com|https://localhost:7777|g' test.txt
-
-
-
 https://localhost:3000/UAT/1.2/
 
 Production: https://dfslh8qg8d862.cloudfront.net/README.md
@@ -28,4 +16,4 @@ UAT: https://dfslh8qg8d862.cloudfront.net/uat/README.md
 For UAT:  https://localhost:3000 => https://dfslh8qg8d862.cloudfront.net/uat/1.2/
 
 For Prod: https://dfslh8qg8d862.cloudfront.net/uat/1.2/ => https://dfslh8qg8d862.cloudfront.net/prod/1.2/
-
+=================================================
