@@ -5,6 +5,8 @@ echo $UAT_URL
 echo 'test string'
 if [ ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch" ]; then
     cat test.txt
+    sed -i 's/UAT/${PROD_URL}' test.txt
+    cat test.txt
     perl -pi -e 's/UAT/Prod/g' test.txt
     cat test.txt
     sed -i 's@UAT@${PROD_URL}' test.txt
