@@ -7,6 +7,3 @@ Prod
 Prod
 Prod
 up
-
-foo
-foofoo
