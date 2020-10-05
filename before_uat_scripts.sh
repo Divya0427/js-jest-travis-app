@@ -9,7 +9,7 @@ if [ ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch" ]; then
     cat test.txt
     sed -i.bak "s|$DEFAULT_LOCALHOST|$UAT_URL|g" test.txt
     cat test.txt
-    mkdir UAT && cd UAT && mkdir ($RELEASE_VERSION)
+    mkdir UAT && cd UAT && mkdir $RELEASE_VERSION
     ls -a
     mv * .* ./UAT/$RELEASE_VERSION
     ls -a
