@@ -1,3 +1,4 @@
+# when the pull_request_branch is test-branch then replacing the content is test.txt file and also creating a folder UAT/<version>
 echo $TRAVIS_PULL_REQUEST_BRANCH
 echo $TRAVIS_BRANCH
 echo $RELEASE_VERSION
@@ -9,6 +10,7 @@ if [ ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch" ]; then
     cat test.txt
     sed -i.bak "s|$DEFAULT_LOCALHOST|$UAT_URL|g" test.txt
     cat test.txt
+    # creating a folder UAT and then the nested folder with version number
     mkdir UAT && cd UAT && mkdir $RELEASE_VERSION
     cd ..
     mv * .* ./UAT/$RELEASE_VERSION
