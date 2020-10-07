@@ -7,6 +7,7 @@ echo $PROD_URL
 echo $UAT_URL
 echo 'BEFORE UAT SCRIPTS'
 if [ ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch" ]; then
+    sed "/Version/s/>[^<]*</>$RELEASE_VERSION</" test.xml
     cat test.txt
     sed -i.bak "s|$DEFAULT_LOCALHOST|$UAT_URL|g" test.txt
     cat test.txt
