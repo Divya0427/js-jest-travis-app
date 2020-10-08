@@ -19,12 +19,6 @@ if [ ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch" ]; then
     cd $RELEASE_VERSION
     ls -a
 fi
-if [[ ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch" AND $TRAVIS_PULL_REQUEST == 1 ]]; then
-    echo 'Its not merge'
-fi
-if [[ ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch" AND $TRAVIS_PULL_REQUEST != 1 ]]; then
-    echo 'Its a merge'
-fi
 if [[ ${TRAVIS_PULL_REQUEST_BRANCH} == "test-branch" && $TRAVIS_PULL_REQUEST == 1 ]]; then
     echo '&Its not merge'
 fi
