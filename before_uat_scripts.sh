@@ -1,4 +1,8 @@
 # when the pull_request_branch is test-branch then replacing the content is test.txt file and also creating a folder UAT/<version>
+# script:
+#   - 'if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then bash ./travis/run_on_pull_requests; fi'
+#   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then bash ./travis/run_on_non_pull_requests; fi'
+
 echo $TRAVIS_PULL_REQUEST_BRANCH
 echo $TRAVIS_BRANCH
 echo $RELEASE_VERSION

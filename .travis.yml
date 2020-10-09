@@ -18,21 +18,19 @@ script:
 before_deploy:
   bash before_prod_scripts.sh
 deploy:
-  provider: s3
-  access_key_id: $AWS_ACCESS_KEY_ID
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
-  bucket: $S3_BUCKET_UAT
-  skip_cleanup: true
-  upload-dir: 1.2
-  on:
-    branch: test-branch
-deploy:
-  provider: s3
-  access_key_id: $AWS_ACCESS_KEY_ID
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
-  bucket: $S3_BUCKET
-  skip_cleanup: true
-  on:
-    branch: master
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY_ID
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
+    bucket: $S3_BUCKET_UAT
+    skip_cleanup: true
+    on:
+      branch: develop
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY_ID
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
+    bucket: $S3_BUCKET
+    skip_cleanup: true
+    on:
+      branch: master
 
 
