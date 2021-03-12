@@ -16,7 +16,7 @@ provider: script
 script:
   bash before_uat_scripts.sh
 before_deploy:
-  bash before_prod_scripts.sh
+  bash before_uat_scripts.sh
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY_ID
